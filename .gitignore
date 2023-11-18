@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Arquivos de construção
+dist/
+build/
+
+# Logs e arquivos temporários
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids/
+*.pid
+*.seed
+*.pid.lock
+lib-cov/
+
+# Diretório de arquivos de cache
+.npm
+.cache/
+
+# Diretório de cobertura de código gerado pelo istanbul
+coverage/
+
+# Arquivos de configuração
+*.config.js
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Diretório de arquivos gerados pelo IDE (por exemplo, Visual Studio Code)
+.vscode/
+
+# Arquivos de configuração do editor
+.editorconfig
+
+# Diretório do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dependendo do seu ambiente, você pode adicionar mais exclusões
