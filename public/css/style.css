@@ -23,6 +23,7 @@ header {
 }
 
 .btn-signup:hover {
+  color: #ff7f66;
   border: 1px solid #ff7f66;
 }
 
