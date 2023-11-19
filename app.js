@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
 const app = express();
+require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
@@ -16,6 +17,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get("/obrigado", (req, res) => {
+  res.render("obrigado");
+})
+
 app.post('/formulario', (req, res) => {
   
   const nome = req.body.nome;
@@ -23,7 +28,7 @@ app.post('/formulario', (req, res) => {
   const telefone = req.body.telefone;
   const gclid = req.body.gclid;
 
-  const webhookUrl = 'https://hooks.zapier.com/hooks/catch/17112146/3kd9sq2/'; // Substitua pela sua URL de webhook
+  const webhookUrl = 'https://hooks.zapier.com/hooks/catch/17112146/3kd9sq2/';
 
   const dataToSend = [
     {"contato": {"nome": nome, "email": email, "telefone": telefone}}
@@ -37,7 +42,7 @@ app.post('/formulario', (req, res) => {
       console.error('Erro ao enviar dados para o webhook:', error);
     });
 
-    res.render('obrigado', { nome, email, telefone, gclid });
+    res.redirect("/obrigado")
 });
 
 

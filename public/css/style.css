@@ -15,7 +15,6 @@ header {
 
 .hero {
   height: calc(100% - 74.28px);
-  background-color: azure;
 }
 
 .btn-signup {
