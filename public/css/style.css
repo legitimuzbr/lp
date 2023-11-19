@@ -30,6 +30,16 @@ header {
   color: black;
 }
 
+.btn-obrigado {
+  color: white;
+  background-color: forestgreen;
+}
+
+.btn-obrigado:hover {
+  color: forestgreen;
+  border: 1px solid forestgreen;
+}
+
 h1 {
   font-weight: bold;
   font-size: 2.2rem;
@@ -46,4 +56,8 @@ h1 {
   h1 {
     font-size: 3rem;
   }
+}
+
+.text-legitimuz {
+  color: #ff7f66;
 }
