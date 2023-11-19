@@ -21,6 +21,10 @@ app.get("/obrigado", (req, res) => {
   res.render("obrigado");
 })
 
+app.get("/*", (req, res) => {
+  res.redirect("/");
+})
+
 app.post('/formulario', (req, res) => {
   
   const nome = req.body.nome;
