@@ -50,12 +50,15 @@ h1 {
   border: 1px solid #ff7f66;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .lead {
       font-size: calc(1.275rem + .3vw);
   }
   h1 {
     font-size: 3rem;
+  }
+  #frameDash {
+    padding-bottom: calc(58.52314814814815% + 37px) !important;
   }
 }
 
