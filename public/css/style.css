@@ -76,6 +76,17 @@ h1 {
   border: 1px solid white;
 }
 
+.obrigado .lead a {
+  color: #ff7f66;
+  text-decoration: none;
+}
+
+.obrigado .lead a:hover {
+  color: #ff7f66;
+  text-decoration: underline;
+}
+
+
 .lead a {
   color: white;
   text-decoration: none;
@@ -85,3 +96,4 @@ h1 {
   color: white;
   text-decoration: underline;
 }
+
