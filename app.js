@@ -17,6 +17,11 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/v2', (req, res) => {
+  res.render('v2/index'); 
+});
+
+
 app.get("/obrigado", (req, res) => {
   res.render("obrigado");
 })
