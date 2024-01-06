@@ -18,7 +18,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/v2', (req, res) => {
-  res.render('v2/index'); 
+  const aviso = req.query.aviso;
+
+  res.render('v2/index', { aviso });
 });
 
 
@@ -81,16 +83,16 @@ app.post('/enviar-dados', async (req, res) => {
 
     await axios.post(zapierWebhookUrl, dataToSend)
     .then(response => {
-      res.status(200).send('Formulário enviado com sucesso!');
+      res.status(200).redirect('/v2?aviso=true');
     })
     .catch(error => {
       console.error('Erro ao enviar formulário:', error);
-      res.status(500).send('Erro ao enviar formulário.');
+      res.status(500).redirect('/v2?aviso=false');
     });
 
   } catch (error) {
       console.error('Erro ao enviar formulário:', error);
-      res.status(500).send('Erro ao enviar formulário.');
+      res.status(500).redirect('/v2?aviso=false');
   }
 });
 

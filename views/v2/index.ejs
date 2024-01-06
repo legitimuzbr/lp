@@ -162,6 +162,19 @@
                   </label>
                 </div>
               </form>
+              
+
+              <% if (aviso === 'true') { %>
+                <div class="mt-4 bg-green-100 text-green-700 p-4 rounded-md">
+                  <p>As informações foram enviadas com sucesso! </p>
+                </div>
+              <% } else if (aviso === 'false') { %>
+                <div class="mt-4 bg-red-100 text-red-700 p-4 rounded-md">
+                  <p>Erro ao enviar os dados!</p>
+                </div>
+              <% } %>
+
+              
             </div>
           </div>
         </div>
