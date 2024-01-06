@@ -118,17 +118,31 @@
                   <input
                     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
                     placeholder="Email *" type="email" name="email" required />
-                  <input
+                  <!--<input
                     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
-                    placeholder="Saques Mensais *" type="number" name="saquesMensais" required />
+                    placeholder="Saques Mensais *" type="number" name="saquesMensais" required />-->
+                    <select
+                      name="saquesMensais"
+                      class="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full flex-1"
+                      required>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 opacity-50" aria-hidden="true">
+                        <path d="m6 9 6 6 6-6"></path>
+                      </svg>
+                      <option value="" disabled selected>Quantidade de saques mensais *</option>
+                      <option value="Entre 0 a 1.000 saques">Entre 0 a 1.000 saques</option>
+                      <option value="Entre 1.000 e 10.000 saques">Entre 1.000 e 10.000 saques</option>
+                      <option value="Entre 10.000 a 100.000 saques">Entre 10.000 a 100.000 saques</option>
+                      <option value="Mais de 100.000 saques">Mais de 100.000 saques</option>
+                    </select>
                 </div>
                 <div class="flex space-x-4">
                   <input
                     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
-                    placeholder="Nome do Site *" type="text" name="nomeDoSite" required />
+                    placeholder="Link do Site *" type="url" name="nomeDoSite" required />
                   <input
                     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
-                    placeholder="Telefone *" type="tel" name="telefone" required />
+                    placeholder="WhatsApp *" type="tel" name="telefone" required />
                 </div>
                 <select
                   name="cenario"
@@ -149,7 +163,7 @@
                 
                 <textarea
                   class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  placeholder="Mensagem" name="mensagem" required></textarea>
+                  placeholder="Por que você tem interesse na nossa consultoria?" name="mensagem" required></textarea>
                 <button
                   class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#ff7f66] text-white w-full">
                   Enviar
@@ -257,7 +271,7 @@
           </p>
           <p class="mb-6">
             A Legitimuz resolve esse problema inserindo uma verificação de identidade no primeiro, segundo ou terceiro
-            saque ou em saques acima de X valor - somos 100% personalizáveis!
+            saque ou em saques acima de determinado valor - somos 100% personalizáveis!
           </p>
           <p class="mb-6">
             Isso faz com que você não afete a experiência do usuário, não perca jogadores e ainda sim, tenha segurança
@@ -323,22 +337,17 @@
             , é obrigatório.
           </p>
           <p class="mb-6">
-            Segundo, é lucrativo, eis o motivo: na maioria dos sites de apostas de hoje, é feito apenas uma consulta
-            de CPF (e é muito fácil encontrar qualquer CPF na internet) e solicitam que o PIX depósito/saque seja de
-            uma conta bancária com o mesmo CPF - isso não é um problema para fraudadores, porque existem fintechs que
-            não verificam a identidade para que uma conta seja aberta em um CPF.
+            Segundo, é lucrativo. E aqui está o motivo: na maioria dos sites de apostas de hoje, é feito apenas uma consulta
+            de CPF e solicitam que o PIX depósito/saque seja de uma conta bancária com o mesmo CPF. Mas não é um problema para fraudadores. Primeiro porque é muito fácil encontrar um CPF de uma pessoa na internet. E sgundo porque existem fintechs e bancos que não verificam a identidade para que uma conta bancária seja aberta em um CPF, então eles conseguem criar contas bancárias em nomes de terceiros.
           </p>
           <p class="mb-6">
-            Isso é um problema porque pode causar fraudes como Abuso de CPA, Abuso de Bônus e Revenue Share infinito -
-            além de que é uma porta aberta para a lavagem de dinheiro.
+            Isso é um problema porque pode causar fraudes como Abuso de CPA, Abuso de Bônus e Revenue Share infinito - além de que é uma porta aberta para a lavagem de dinheiro em nome de terceiros.
           </p>
           <p class="mb-6">
-            A Legitimuz resolve esse problema inserindo uma verificação de identidade no primeiro, segundo ou terceiro
-            saque ou em saques acima de X valor - somos 100% personalizáveis!
+            A Legitimuz resolve esse problema inserindo uma verificação de identidade no primeiro, segundo, terceiro saque ou em saques acima de um determinado valor. Somos 100% personalizáveis!
           </p>
           <p class="mb-6">
-            Isso faz com que você não afete a experiência do usuário, não perca jogadores e ainda sim, tenha segurança
-            contra fraudadores.
+            Isso faz com que você não afete a experiência do usuário, não perca jogadores, não crie barreiras para o depósito e ainda sim tenha segurança contra fraudadores.
           </p>
         </div>
       </div>
@@ -354,7 +363,7 @@
           <div class="w-full p-4 mb-4">
             <img src="/img/clientes/eds2.svg" alt="Esportes da Sorte Logo" class="h-5 mx-auto" />
           </div>
-          <p class="text-gray-600 italic text-center">"Como líder em cassinos online no Brasil, priorizamos a autenticidade e integridade dos usuários. A Legitimuz foi crucial na implementação de processos de verificação de identidade, alinhados às normativas brasileiras e focados no combate a fraudes. Com as soluções da Legitimuz, melhoramos a segurança e mantivemos a conformidade regulatória, assegurando a verificação eficaz dos usuários. Seu suporte ao cliente é excepcional, essencial no nosso esforço contínuo contra qualquer tentantiva mínima de fraude."</p>
+          <p class="text-gray-600 italic text-center">"Como um dos maiores cassino online do Brasil, é de extrema importência para a gente cumprir as regulamentações necessárias para sermos uma empresa 100% legal no Brasil. E a Legitimuz está nos ajudando demais nesse processo, pois nosso maior medo era que o processo demorasse muito e fosse muito complexo para nossos usuários, mas foi totalmente ao contrário. Integramos a solução rapidamente e nossos clientes fazem o processo muito rápido, e de maneira quase automática. Sem falar no suporte que estão nos dando, excelente equipe!"</p>
           <div class="mt-4">
             <p class="font-bold text-center">Esportes da Sorte</p>
             <p class="text-sm text-gray-500 text-center">Gerente de Risco</p>
@@ -364,7 +373,7 @@
           <div class="w-full p-4 mb-4">
             <img src="/img/clientes/onabet.png" alt="OnaBet Logo" class="h-10 mx-auto" />
           </div>
-          <p class="text-gray-600 italic text-center">"Após a parceria com a Legitimuz, superamos desafios de segurança e prevenção de fraudes, melhorando nossa capacidade de detecção e combate a atividades fraudulentas. A implementação das soluções da Legitimuz também nos ajudou a cumprir rigorosamente as regulamentações do setor, elevando a confiança dos clientes. Estamos muito satisfeitos com o profissionalismo e a eficácia da Legitimuz em fortalecer nossas defesas contra fraudes e garantir a conformidade regulatória."</p>
+          <p class="text-gray-600 italic text-center">"Um dos nossos maiores problemas sempre foram as fraudes que ocorriam na plataforma, já estávamos buscando uma solução para previnir isso, e quando recebemos a notícia de que verificação de identidade seria obrigatório para bets no Brasil começamos a tornar isso como urgente. E buscando soluções a Legitimuz acabou cruzando nosso caminho e apresentando a solução de verificação de identidade deles e foi muito simples a implementação. Nossas tentativas de fraude diminuiram bastante e agora estamos 100% prontos para quando a nova lei entrar em vigor!"</p>
           <div class="mt-4">
             <p class="font-bold text-center">OnaBet</p>
             <p class="text-sm text-gray-500 text-center">CEO</p>
