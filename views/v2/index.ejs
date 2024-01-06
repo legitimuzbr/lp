@@ -125,6 +125,44 @@
                     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
                     placeholder="Telefone *" type="tel" name="telefone" required />
                 </div>
+                <select
+  type="button"
+  role="combobox"
+  aria-controls="radix-:r22:"
+  aria-expanded="false"
+  aria-autocomplete="none"
+  dir="ltr"
+  data-state="closed"
+  data-placeholder=""
+  class="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full"
+  required
+>          
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="h-4 w-4 opacity-50"
+    aria-hidden="true"
+  >
+    <path d="m6 9 6 6 6-6"></path>
+  </svg>
+  <!-- Texto padrão como o primeiro item desabilitado e selecionado -->
+  <option value="" disabled selected>Qual CENÁRIO mais se adequa ao seu caso?</option>
+  <!-- Opções selecionáveis -->
+  <option value="kyc-manual">Preciso de KYC e faço manualmente</option>
+  <option value="kyc-none">Preciso de KYC e não faço (nem mesmo manual)</option>
+  <option value="no-kyc">Não preciso de KYC</option>
+</select>
+
+
+                  
+                
                 <textarea
                   class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Mensagem" name="mensagem" required></textarea>
@@ -143,14 +181,11 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
   </header>
-
-
-
+  
   <section class="bg-white py-16">
     <div class="container mx-auto px-4 md:px-8 lg:px-16">
       <div class="flex flex-wrap items-center justify-between">
