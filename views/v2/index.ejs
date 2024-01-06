@@ -409,7 +409,7 @@
 
 
   <script>
-    // Carrega a API do YouTube IFrame
+
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -429,6 +429,39 @@
     function playVideo() {
       player.playVideo();
     }
+
+    document.getElementById('formContato').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevenindo o comportamento padrão de envio do formulário
+
+        const formData = new FormData(this);
+        const dataToSend = {};
+        for (const [key, value] of formData.entries()) {
+            dataToSend[key] = value;
+        }
+
+        fetch('/enviar-dados', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToSend),
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            }
+            throw new Error('Falha no envio do formulário');
+        })
+        .then(text => {
+            alert('Formulário enviado com sucesso!');
+        })
+        .catch(error => {
+            alert('Erro ao enviar formulário');
+            console.error('Erro:', error);
+        });
+    });
+
+
   </script>
 </body>
 

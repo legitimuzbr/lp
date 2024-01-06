@@ -85,12 +85,12 @@ app.post('/enviar-dados', async (req, res) => {
     })
     .catch(error => {
       console.error('Erro ao enviar formulário:', error);
-    res.status(500).send('Erro ao enviar formulário.');
+      res.status(500).send('Erro ao enviar formulário.');
     });
 
   } catch (error) {
-    console.error('Erro ao enviar formulário:', error);
-    res.status(500).send('Erro ao enviar formulário.');
+      console.error('Erro ao enviar formulário:', error);
+      res.status(500).send('Erro ao enviar formulário.');
   }
 });
 
