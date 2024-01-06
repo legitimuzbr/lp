@@ -60,7 +60,7 @@ app.post('/formulario', (req, res) => {
 
 app.post('/enviar-dados', async (req, res) => {
   try {
-    const { nome, sobrenome, email, saquesMensais, nomeDoSite, telefone, mensagem } = req.body;
+    const { nome, sobrenome, email, saquesMensais, nomeDoSite, telefone, cenario, mensagem } = req.body;
     
     const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/17112146/3w5qmub/';
 
@@ -73,6 +73,7 @@ app.post('/enviar-dados', async (req, res) => {
         "saquesMensais": saquesMensais,
         "nomeDoSite": nomeDoSite,
         "telefone": telefone,
+        "cenario": cenario,
         "mensagem": mensagem
       }
     }
@@ -87,7 +88,6 @@ app.post('/enviar-dados', async (req, res) => {
     res.status(500).send('Erro ao enviar formulário.');
     });
 
-    
   } catch (error) {
     console.error('Erro ao enviar formulário:', error);
     res.status(500).send('Erro ao enviar formulário.');
