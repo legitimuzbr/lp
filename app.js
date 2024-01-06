@@ -56,6 +56,47 @@ app.post('/formulario', (req, res) => {
 });
 
 
+
+
+app.post('/enviar-dados', async (req, res) => {
+  try {
+    const { nome, sobrenome, email, saquesMensais, nomeDoSite, telefone, mensagem } = req.body;
+    
+    const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/17112146/3w5qmub/';
+
+    const dataToSend = [
+      {
+      "contato": {
+        "nome": nome,
+        "sobrenome": sobrenome,
+        "email": email,
+        "saquesMensais": saquesMensais,
+        "nomeDoSite": nomeDoSite,
+        "telefone": telefone,
+        "mensagem": mensagem
+      }
+    }
+    ];
+
+    await axios.post(zapierWebhookUrl, dataToSend)
+    .then(response => {
+      res.status(200).send('Formulário enviado com sucesso!');
+    })
+    .catch(error => {
+      console.error('Erro ao enviar formulário:', error);
+    res.status(500).send('Erro ao enviar formulário.');
+    });
+
+    
+  } catch (error) {
+    console.error('Erro ao enviar formulário:', error);
+    res.status(500).send('Erro ao enviar formulário.');
+  }
+});
+
+
+
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
