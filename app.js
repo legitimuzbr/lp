@@ -23,6 +23,10 @@ app.get('/v2', (req, res) => {
   res.render('v2/index', { aviso });
 });
 
+app.get('/relatorio', (req, res) => {
+  res.render('relatorio/index');
+});
+
 
 app.get("/obrigado", (req, res) => {
   res.render("obrigado");
