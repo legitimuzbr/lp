@@ -24,7 +24,10 @@ app.get('/v2', (req, res) => {
 });
 
 app.get('/relatorio', (req, res) => {
-  res.render('relatorio/index');
+
+  const aviso = req.query.aviso;
+
+  res.render('relatorio/index', { aviso });
 });
 
 
@@ -99,6 +102,39 @@ app.post('/enviar-dados', async (req, res) => {
       res.status(500).redirect('/v2?aviso=false');
   }
 });
+
+
+app.post('/relatorio', async (req, res) => {
+  try {
+    const { nome, email, telefone } = req.body;
+    
+    const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/17112146/3wf2086/';
+
+    const dataToSend = [
+      {
+      "contato": {
+        "nome": nome,
+        "email": email,
+        "telefone": telefone,
+      }
+    }
+    ];
+
+    await axios.post(zapierWebhookUrl, dataToSend)
+    .then(response => {
+      res.status(200).redirect('/relatorio?aviso=true');
+    })
+    .catch(error => {
+      console.error('Erro ao enviar formulário:', error);
+      res.status(500).redirect('/relatorio?aviso=false');
+    });
+
+  } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      res.status(500).redirect('/relatorio?aviso=false');
+  }
+});
+
 
 
 

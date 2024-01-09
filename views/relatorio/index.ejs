@@ -38,6 +38,26 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+  <% if (aviso === "true") { %>
+    <div id="avisoSucesso" class="fixed bottom-5 left-5 p-2 rounded-lg shadow-md bg-green-500 text-white text-sm flex items-center justify-between">
+        <span>Enviado com sucesso. Entraremos em contato com você para enviar o relatório via WhatsApp!</span>
+        <button onclick="document.getElementById('avisoSucesso').style.display='none'" class="ml-2 text-white text-lg leading-none">
+            &#10005;
+        </button>
+    </div>
+<% } if (aviso === "false") { %>
+    <div id="avisoErro" class="fixed bottom-5 left-5 p-2 rounded-lg shadow-md bg-red-500 text-white text-sm flex items-center justify-between">
+        <span>Erro ao enviar formulário, tente novamente!</span>
+        <button onclick="document.getElementById('avisoErro').style.display='none'" class="ml-2 text-white text-lg leading-none">
+            &#10005;
+        </button>
+    </div>
+<% } %>
+
+
+  
+
+
   <header class="bg-[#0e0e10] text-white font-inter rounded-lg overflow-hidden">
     <div class="bg-white p-8 flex justify-center">
       <img alt="Legitimuz Logo" class="h-8 w-auto"
@@ -61,7 +81,6 @@
           </svg>
         </a>
       </div>
-
     </div>
   </header>
 
@@ -71,18 +90,18 @@
       <p class="text-lg text-center mt-4">
         Preencha o formulário abaixo e nossa equipe entrará em contato com você o mais rápido possível.
       </p>
-      <form class="w-full max-w-md mt-8 space-y-4">
+      <form class="w-full max-w-md mt-8 space-y-4" action="/relatorio" method="POST">
         <input
           class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full"
-          placeholder="Nome"
+          placeholder="Nome" name="nome"
         />
         <input
           class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full"
-          placeholder="Email"
+          placeholder="Email" name="email"
         />
         <input
           class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full"
-          placeholder="Whatsapp"
+          placeholder="Whatsapp" name="telefone"
         />
         <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 w-full bg-[#ff6f77] text-white">
           Quero Acesso
